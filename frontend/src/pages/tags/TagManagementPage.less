@@ -1,0 +1,295 @@
+.tag-management-page {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: 100vh;
+  
+  .page-header {
+    margin-bottom: 24px;
+    
+    h1 {
+      margin: 0 0 8px 0;
+      color: #1890ff;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    
+    p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+  }
+  
+  // 统计卡片样式
+  .ant-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    
+    .ant-statistic {
+      .ant-statistic-title {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      
+      .ant-statistic-content {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  // 操作栏样式
+  .operation-bar {
+    .ant-input-search {
+      .ant-input {
+        border-radius: 6px;
+      }
+      
+      .ant-btn {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+    
+    .ant-btn {
+      border-radius: 6px;
+      
+      &.ant-btn-primary {
+        background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+        border: none;
+        
+        &:hover {
+          background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+        }
+      }
+      
+      &.ant-btn-dangerous {
+        &:hover {
+          background: #ff7875;
+          border-color: #ff7875;
+        }
+      }
+    }
+  }
+  
+  // 表格样式
+  .ant-table {
+    .ant-table-thead > tr > th {
+      background: #fafafa;
+      border-bottom: 2px solid #f0f0f0;
+      font-weight: 600;
+      color: #262626;
+    }
+    
+    .ant-table-tbody > tr {
+      &:hover > td {
+        background: #f5f5f5;
+      }
+      
+      > td {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 16px;
+      }
+    }
+    
+    // 标签样式
+    .ant-tag {
+      border-radius: 12px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+      }
+      
+      .anticon {
+        margin-right: 4px;
+      }
+    }
+    
+    // 徽章样式
+    .ant-badge {
+      .ant-badge-count {
+        background: #52c41a;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        min-width: 20px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 6px;
+        box-shadow: 0 2px 4px rgba(82, 196, 26, 0.3);
+      }
+    }
+    
+    // 操作按钮样式
+    .ant-btn-link {
+      padding: 4px 8px;
+      height: auto;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(24, 144, 255, 0.1);
+        transform: scale(1.1);
+      }
+      
+      &.ant-btn-dangerous:hover {
+        background: rgba(255, 77, 79, 0.1);
+      }
+    }
+  }
+  
+  // 分页样式
+  .ant-pagination {
+    margin-top: 24px;
+    text-align: center;
+    
+    .ant-pagination-item {
+      border-radius: 6px;
+      
+      &.ant-pagination-item-active {
+        background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+        border-color: #1890ff;
+        
+        a {
+          color: #fff;
+        }
+      }
+    }
+    
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      border-radius: 6px;
+    }
+  }
+  
+  // 模态框样式
+  .ant-modal {
+    .ant-modal-header {
+      border-radius: 8px 8px 0 0;
+      
+      .ant-modal-title {
+        color: #1890ff;
+        font-weight: 600;
+      }
+    }
+    
+    .ant-modal-body {
+      padding: 24px;
+      
+      .ant-form-item-label > label {
+        font-weight: 600;
+        color: #262626;
+      }
+      
+      .ant-input {
+        border-radius: 6px;
+        
+        &:focus,
+        &:hover {
+          border-color: #1890ff;
+          box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
+      }
+      
+      // 合并标签预览
+      .merge-tags-preview {
+        .ant-tag {
+          margin-bottom: 8px;
+          animation: fadeIn 0.3s ease;
+        }
+      }
+      
+      // 提示文字样式
+      .hint-text {
+        color: #666;
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 8px 12px;
+        background: #f6f8fa;
+        border-radius: 4px;
+        border-left: 3px solid #1890ff;
+      }
+    }
+    
+    .ant-modal-footer {
+      border-radius: 0 0 8px 8px;
+      
+      .ant-btn {
+        border-radius: 6px;
+      }
+    }
+  }
+  
+  // 空状态样式
+  .ant-empty {
+    margin: 60px 0;
+    
+    .ant-empty-description {
+      color: #999;
+    }
+  }
+  
+  // 响应式设计
+  @media (max-width: 768px) {
+    padding: 16px;
+    
+    .page-header h1 {
+      font-size: 24px;
+    }
+    
+    .ant-row {
+      .ant-col {
+        margin-bottom: 16px;
+      }
+    }
+    
+    .operation-bar {
+      .ant-row {
+        flex-direction: column;
+        gap: 16px;
+        
+        .ant-col {
+          width: 100%;
+        }
+      }
+    }
+    
+    .ant-table {
+      .ant-table-tbody > tr > td {
+        padding: 12px 8px;
+      }
+    }
+  }
+  
+  // 动画效果
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  // 加载状态
+  .ant-spin-container {
+    min-height: 200px;
+  }
+  
+  // 选中行高亮
+  .ant-table-tbody > tr.ant-table-row-selected > td {
+    background: rgba(24, 144, 255, 0.05);
+  }
+}

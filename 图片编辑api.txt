@@ -1,0 +1,37 @@
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="ms-87958949-ba70-4ce0-a245-d4680b75f675", # 请替换成您的ModelScope Access Token
+    base_url="https://api-inference.modelscope.cn/v1/"
+)
+
+response = client.chat.completions.create(
+    model="Qwen/Qwen-Image-Edit", # ModelScope Model-Id
+    messages=[
+        {
+            'role': 'system',
+            'content': 'You are a helpful assistant.'
+        },
+        {
+            'role': 'user',
+            'content': '用python写一下快排'
+        }
+    ],
+    stream=True
+)
+
+for chunk in response:
+    print(chunk.choices[0].delta.content, end='', flush=True)
+
+参数名	参数说明	是否必须	参数类型	示例	取值范围
+model	模型id	是	string	MAILAND/majicflus_v1	ModelScope上的AIGC 模型ID
+prompt	正向提示词，大部分模型建议使用英文提示词效果较好。	是	string	A mysterious girl walking down the corridor.	长度小于2000
+negative_prompt	负向提示词	否	string	lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry	长度小于2000
+size	生成图像分辨率大小	否	string	1024x1024	分辨率范围:
+SD系列:[64x64,2048x2048]，FLUX:[64x64,1024x1024]，Qwen-Image:[64x64,1664x1664]
+seed	随机种子	否	int	12345	[0,2^31-1]
+steps	采样步数	否	int	30	[1,100]
+guidance	提示词引导系数	否	float	3.5	[1.5,20]
+image_url	待编辑图片的url地址，该参数只适用于支持图片编辑的模型	否	string	https://resources.modelscope.cn/aigc/image_edit.png	确保公网可访问
+
+

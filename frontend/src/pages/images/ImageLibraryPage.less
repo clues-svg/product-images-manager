@@ -1,0 +1,124 @@
+.image-library-page {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    
+    .page-title {
+      margin: 0;
+    }
+  }
+  
+  .search-card {
+    margin-bottom: 24px;
+  }
+  
+  .image-card {
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .image-wrapper {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      
+      .ant-image {
+        width: 100%;
+        height: 100%;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+      
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        
+        .ant-btn {
+          color: white;
+          border: none;
+          background: rgba(255, 255, 255, 0.2);
+          
+          &:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+          }
+        }
+      }
+      
+      &:hover .image-overlay {
+        opacity: 1;
+      }
+    }
+    
+    .image-info {
+      padding: 12px;
+      
+      .image-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #262626;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      .image-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: #8c8c8c;
+        
+        .image-tags {
+          display: flex;
+          gap: 4px;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+  
+  .pagination-wrapper {
+    margin-top: 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-library-page {
+    .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .search-card .ant-row {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}

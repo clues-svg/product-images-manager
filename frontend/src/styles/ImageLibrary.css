@@ -1,0 +1,250 @@
+/* 图片库页面样式 */
+.image-library-page {
+  padding: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.page-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* 图片卡片样式 */
+.image-card {
+  position: relative;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.image-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-selection {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-wrapper .ant-image {
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper .ant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay .ant-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #333;
+}
+
+.image-overlay .ant-btn:hover {
+  background: #fff;
+  color: #1890ff;
+}
+
+.image-overlay .ant-btn.ant-btn-dangerous:hover {
+  color: #ff4d4f;
+}
+
+/* 图片标题样式 */
+.image-title {
+  padding: 8px 12px 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #f5f5f5;
+  background: #fafafa;
+}
+
+/* 图片元信息样式 */
+.image-meta {
+  padding: 8px 12px;
+}
+
+.image-size-info {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.image-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.image-tags-row .ant-tag {
+  margin: 0;
+  font-size: 11px;
+  line-height: 18px;
+  padding: 0 6px;
+}
+
+.image-user-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.image-user-tags .ant-tag {
+  margin: 0;
+  font-size: 11px;
+  line-height: 18px;
+  padding: 0 6px;
+  background: #f6f6f6;
+  border: 1px solid #e8e8e8;
+  color: #666;
+}
+
+.image-user-tags .ant-tag:hover {
+  background: #e6f7ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.image-no-tags {
+  margin-top: 4px;
+}
+
+.image-no-tags .ant-btn {
+  color: #999;
+  font-size: 11px;
+}
+
+.image-no-tags .ant-btn:hover {
+  color: #1890ff;
+}
+
+/* 分页样式 */
+.pagination-wrapper {
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* 加载和错误状态 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.error-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff4d4f;
+  margin-bottom: 8px;
+}
+
+.error-message {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .image-library-page {
+    padding: 12px;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .page-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .image-wrapper {
+    height: 150px;
+  }
+  
+  .image-title {
+    font-size: 12px;
+    padding: 6px 8px 3px;
+  }
+  
+  .image-meta {
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-wrapper {
+    height: 120px;
+  }
+  
+  .image-title {
+    font-size: 11px;
+  }
+  
+  .image-size-info {
+    font-size: 11px;
+  }
+}

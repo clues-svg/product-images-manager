@@ -1,0 +1,35 @@
+{
+  "development": {
+    "username": "pictures",
+    "password": "YhcRzhcbkzdnRTHA",
+    "database": "pictures",
+    "host": "101.42.235.113",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "test": {
+    "username": "pictures",
+    "password": "YhcRzhcbkzdnRTHA",
+    "database": "pictures_test",
+    "host": "101.42.235.113",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "username": "pictures",
+    "password": "YhcRzhcbkzdnRTHA",
+    "database": "pictures_prod",
+    "host": "101.42.235.113",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false
+  }
+}

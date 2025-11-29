@@ -1,0 +1,6 @@
+图片用COS储存
+这个项目前后端是用什么做的，这个后端有哪些功能API
+Too many keys specified关键修复: 修改了 index.js，禁用了 sequelize.sync({ alter: true })。这是导致启动报错（Too many keys specified）的根源，因为在已有数据库上自动修改表结构非常危险且容易冲突。现在后端将直接使用您现有的数据库结构。
+背景去除”和“场景生成”是基础算法。如果需要商业级的效果，建议接入 Python 的 rembg 库
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+爬取功能没完成

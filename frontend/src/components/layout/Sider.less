@@ -1,0 +1,52 @@
+.app-sider {
+  .logo {
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1px;
+  }
+  
+  .ant-menu-dark {
+    background: #001529;
+    
+    .ant-menu-item {
+      margin: 4px 12px;
+      border-radius: 6px;
+      
+      a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+      }
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      &.ant-menu-item-selected {
+        background: #1890ff;
+        
+        a {
+          color: #fff;
+        }
+      }
+    }
+    
+    .ant-menu-item-icon {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-sider {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+}
